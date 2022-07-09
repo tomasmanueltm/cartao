@@ -1,0 +1,215 @@
+@import "__"
+
+
+
+.painel
+    height: 100vh
+    @include flex
+    @include index
+
+    // resposuve
+    @include desk
+        height: 100%
+
+    .cartao
+        width: 370px
+        overflow: hidden
+        position: relative
+        border-radius: 10px
+        background: #241f47
+        padding: 3.8rem 2rem 2rem
+
+        // responsividade
+        @include mobile
+            width: inherit
+            // padding: 3.8rem 0px 2rem
+       
+
+        .img
+            top: 10px
+            z-index: 1
+            width: 125px
+            height: 125px
+            margin: 0 auto
+            display: block
+            border-radius: 50%
+            position: relative
+            animation: keyDescer 500ms
+            animation-fill-mode: forwards
+            box-shadow:-10rem -1rem 0px 4.5rem #8a2d64, 10rem -1rem 0px 4.5rem #8a2d64
+
+            img
+                width: 100%
+                height: 100%
+                border: none
+                outline: none
+                overflow: hidden
+                object-fit: cover
+                border-radius: 50%
+                border: 5px solid #fff
+
+            &::before
+                top: -2rem
+                content: ""
+                width: 6rem
+                left: 0.3rem
+                padding: .5rem
+                display: block
+                background: white
+                position: absolute
+                border-radius: 10px
+                border: 1px solid #eee
+
+        .informacoes
+            clear: both
+            padding: 5rem 1rem  2rem
+
+            .usuario
+                color: #fff
+                text-align: center
+
+                h1
+                    font-weight: 900
+                    font-size: 1.2rem
+                    letter-spacing: 1.5px
+                p
+                    padding: .3rem
+                    font-size: .9rem
+            .sobre
+                padding: 1rem 0 1rem
+
+                li
+                    color: #fff
+                    margin: 10px 0
+                    @include grid(.4fr 1fr)
+
+                    // responsividade
+                    @include mobile
+                        @include grid(0.9fr 1fr)
+                        // border-bottom: 1px solid #ccc
+                        &:nth-child(5)
+                            padding: 1rem 0 0
+                        &:nth-child(5), &:last-child
+                            text-align: center
+                            @include grid(1fr)
+                            
+                    
+                    p
+                        font-size: .7rem
+                        font-weight: 600
+                        letter-spacing: 1px
+                        text-transform: uppercase
+                    span
+                        font-size: .8rem
+
+            .social
+                left: 0px
+                bottom: 0px
+                width: 100%
+                text-align: center
+                position: absolute   
+                padding: 1.5rem 1rem
+                // @include flex(row, space-around)
+
+                a
+                    color: #999
+                    margin: 0 .8rem
+                    display: inline-block
+
+                    i
+                        font-size: 1.2rem
+        .editar
+            right: 5%
+            bottom: 25px
+            color: #ccc
+            display: none
+            cursor: pointer
+            transition: 500ms
+            position: absolute
+
+        &:hover
+            .editar
+                transition: 500ms display
+                display: block
+
+    .form
+        z-index: 2
+        width: 550px
+        // height: 90.5%
+        overflow: hidden
+        position: relative
+        border-radius: 8px
+        background: #eee
+        padding: 3rem 2rem 2rem
+
+        // resp
+        @include lasped
+            width: 450px
+        @include normal
+            width: 375px
+
+        h3
+            font-size: 1rem
+            font-weight: 900
+            letter-spacing: 1.5px
+            padding-bottom: 1.3rem
+            text-transform: uppercase
+
+            &::after
+                top: 2px
+                content: ""
+                width: 40px
+                padding: .2rem
+                display: block
+                border-radius: 6px
+                background: #333  
+                position: relative
+
+        .campos
+            @include grid( 1fr 1fr)
+
+            @include lasped
+                @include grid(1fr)
+
+            &.gr3
+                @include grid(1fr 1fr 1fr)
+                
+                @include normal
+                   @include grid(1fr 1fr)
+        label
+            display: block
+            padding: .5rem 0
+            margin: 0 0 .6rem
+
+            input
+                width: 100%
+                border: none
+                outline: none
+                padding: 10px 0
+                position: relative
+                background: transparent
+                border-bottom: 2px solid #ccc 
+
+                    
+            span
+                // display: none
+                font-weight: 900
+                padding: 0 0 15px
+
+        button
+            border: none
+            outline: none
+            cursor: pointer
+            font-weight: 900
+            background: #999    
+            border-radius: 5px
+            padding: .7rem 2rem
+            letter-spacing: 2px
+            text-transform: uppercase
+
+            &.cancelar
+                color: #fff
+                margin: 0 5px 0 0
+                background: #ea2020
+.none
+    display: none

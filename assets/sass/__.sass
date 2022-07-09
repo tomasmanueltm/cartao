@@ -1,0 +1,119 @@
+@import url("../icon/icons.css")
+@font-face 
+    font-family: "Rototo"
+    src: url("../font/OpenRoboto.ttf")
+
+// configuracao padrao
+*
+    margin: 0px
+    padding: 0px
+    list-style: none
+    font-weight: 400
+    font-family: Rototo
+    word-break: keep-all
+    text-decoration: none
+    box-sizing: border-box
+    scroll-behavior: smooth
+body
+   overflow-x: hidden
+
+::scrollbar  
+    width: 0px!important
+*::scrollbar  
+    width: 0px!important
+*::-webkit-scrollbar 
+    width: 0px!important
+*::-moz-scrollbar 
+    width: 0px!important
+*::-ms-scrollbar 
+    width: 0px!important
+*::-moz-osx-scrollbar
+    width: 0px!important
+*::-o-scrollbar
+    width: 0px!important
+
+              
+// comportamento da class flex
+@mixin flex($direction: column, $just: center)
+    display: flex
+    align-items: center
+    flex-direction: $direction //define alinhamento de ordem para linha 
+    justify-content: $just
+    gap: 1rem // espacamento das colunas(input)
+
+@mixin grid($count, $gap: 1rem)
+    display: grid
+    grid-template-columns: $count
+    grid-gap: $gap
+
+@mixin index($padding: 2rem, $width: 100%)
+    width: $width
+    padding: $padding
+
+
+.subir
+    animation: keySubir 500ms
+    animation-fill-mode: forwards
+.descer
+    animation: keyDescer 800ms
+    animation-fill-mode: forwards
+.none
+    display: none 
+
+.modal
+    top: 0px
+    left: 0px
+    bottom: 0px
+    width: 100%
+    height: 100vh
+    // background: #ccc
+    position: absolute 
+    justify-content: center
+
+    .message
+        width: 35vw
+        padding: 2rem
+        text-align: center
+        background: #fff
+        border-radius: 10px
+        box-shadow: 2px 5px 7px 1px #333
+
+        i
+            font-size: 3.5rem
+
+            &.sucess
+                color: #74c933
+            &.error
+                color: #f12929
+
+@keyframes keySubir
+    0%
+        opacity: 0
+        transform:  translateX(10vh)
+    100%
+        opacity: 1
+        transform: translateX(0%)
+@keyframes keyDescer
+    0%
+        opacity: 0
+        transform:  translateX(-100vh)
+    100%
+        opacity: 1
+        transform: translateX(0%)     
+
+    
+@mixin desk
+    @media (max-width: 880px)
+        @content
+
+@mixin lasped
+    @media (max-width: 590px)
+        @content
+
+@mixin normal
+    @media (max-width: 475px)
+        @content
+    
+@mixin mobile
+    @media (max-width: 375px)
+        @content

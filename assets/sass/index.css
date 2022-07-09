@@ -1,0 +1,354 @@
+@import url("../icon/icons.css");
+@font-face {
+  font-family: "Rototo";
+  src: url("../font/OpenRoboto.ttf");
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  font-weight: 400;
+  font-family: Rototo;
+  word-break: keep-all;
+  text-decoration: none;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+::scrollbar {
+  width: 0px !important;
+}
+
+*::scrollbar {
+  width: 0px !important;
+}
+
+*::-webkit-scrollbar {
+  width: 0px !important;
+}
+
+*::-moz-scrollbar {
+  width: 0px !important;
+}
+
+*::-ms-scrollbar {
+  width: 0px !important;
+}
+
+*::-moz-osx-scrollbar {
+  width: 0px !important;
+}
+
+*::-o-scrollbar {
+  width: 0px !important;
+}
+
+.subir {
+  animation: keySubir 500ms;
+  animation-fill-mode: forwards;
+}
+
+.descer {
+  animation: keyDescer 800ms;
+  animation-fill-mode: forwards;
+}
+
+.none {
+  display: none;
+}
+
+.modal {
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  justify-content: center;
+}
+.modal .message {
+  width: 35vw;
+  padding: 2rem;
+  text-align: center;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 2px 5px 7px 1px #333;
+}
+.modal .message i {
+  font-size: 3.5rem;
+}
+.modal .message i.sucess {
+  color: #74c933;
+}
+.modal .message i.error {
+  color: #f12929;
+}
+
+@keyframes keySubir {
+  0% {
+    opacity: 0;
+    transform: translateX(10vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+@keyframes keyDescer {
+  0% {
+    opacity: 0;
+    transform: translateX(-100vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+.painel {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 2rem;
+}
+@media (max-width: 880px) {
+  .painel {
+    height: 100%;
+  }
+}
+.painel .cartao {
+  width: 370px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+  background: #241f47;
+  padding: 3.8rem 2rem 2rem;
+}
+@media (max-width: 375px) {
+  .painel .cartao {
+    width: inherit;
+  }
+}
+.painel .cartao .img {
+  top: 10px;
+  z-index: 1;
+  width: 125px;
+  height: 125px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  animation: keyDescer 500ms;
+  animation-fill-mode: forwards;
+  box-shadow: -10rem -1rem 0px 4.5rem #8a2d64, 10rem -1rem 0px 4.5rem #8a2d64;
+}
+.painel .cartao .img img {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #fff;
+}
+.painel .cartao .img::before {
+  top: -2rem;
+  content: "";
+  width: 6rem;
+  left: 0.3rem;
+  padding: 0.5rem;
+  display: block;
+  background: white;
+  position: absolute;
+  border-radius: 10px;
+  border: 1px solid #eee;
+}
+.painel .cartao .informacoes {
+  clear: both;
+  padding: 5rem 1rem 2rem;
+}
+.painel .cartao .informacoes .usuario {
+  color: #fff;
+  text-align: center;
+}
+.painel .cartao .informacoes .usuario h1 {
+  font-weight: 900;
+  font-size: 1.2rem;
+  letter-spacing: 1.5px;
+}
+.painel .cartao .informacoes .usuario p {
+  padding: 0.3rem;
+  font-size: 0.9rem;
+}
+.painel .cartao .informacoes .sobre {
+  padding: 1rem 0 1rem;
+}
+.painel .cartao .informacoes .sobre li {
+  color: #fff;
+  margin: 10px 0;
+  display: grid;
+  grid-template-columns: 0.4fr 1fr;
+  grid-gap: 1rem;
+}
+@media (max-width: 375px) {
+  .painel .cartao .informacoes .sobre li {
+    display: grid;
+    grid-template-columns: 0.9fr 1fr;
+    grid-gap: 1rem;
+  }
+  .painel .cartao .informacoes .sobre li:nth-child(5) {
+    padding: 1rem 0 0;
+  }
+  .painel .cartao .informacoes .sobre li:nth-child(5), .painel .cartao .informacoes .sobre li:last-child {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+  }
+}
+.painel .cartao .informacoes .sobre li p {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.painel .cartao .informacoes .sobre li span {
+  font-size: 0.8rem;
+}
+.painel .cartao .informacoes .social {
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  padding: 1.5rem 1rem;
+}
+.painel .cartao .informacoes .social a {
+  color: #999;
+  margin: 0 0.8rem;
+  display: inline-block;
+}
+.painel .cartao .informacoes .social a i {
+  font-size: 1.2rem;
+}
+.painel .cartao .editar {
+  right: 5%;
+  bottom: 25px;
+  color: #ccc;
+  display: none;
+  cursor: pointer;
+  transition: 500ms;
+  position: absolute;
+}
+.painel .cartao:hover .editar {
+  transition: 500ms display;
+  display: block;
+}
+.painel .form {
+  z-index: 2;
+  width: 550px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px;
+  background: #eee;
+  padding: 3rem 2rem 2rem;
+}
+@media (max-width: 590px) {
+  .painel .form {
+    width: 450px;
+  }
+}
+@media (max-width: 475px) {
+  .painel .form {
+    width: 375px;
+  }
+}
+.painel .form h3 {
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  padding-bottom: 1.3rem;
+  text-transform: uppercase;
+}
+.painel .form h3::after {
+  top: 2px;
+  content: "";
+  width: 40px;
+  padding: 0.2rem;
+  display: block;
+  border-radius: 6px;
+  background: #333;
+  position: relative;
+}
+.painel .form .campos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+}
+@media (max-width: 590px) {
+  .painel .form .campos {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+  }
+}
+.painel .form .campos.gr3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+}
+@media (max-width: 475px) {
+  .painel .form .campos.gr3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+  }
+}
+.painel .form label {
+  display: block;
+  padding: 0.5rem 0;
+  margin: 0 0 0.6rem;
+}
+.painel .form label input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 10px 0;
+  position: relative;
+  background: transparent;
+  border-bottom: 2px solid #ccc;
+}
+.painel .form label span {
+  font-weight: 900;
+  padding: 0 0 15px;
+}
+.painel .form button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: 900;
+  background: #999;
+  border-radius: 5px;
+  padding: 0.7rem 2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.painel .form button.cancelar {
+  color: #fff;
+  margin: 0 5px 0 0;
+  background: #ea2020;
+}
+
+.none {
+  display: none;
+}
+
+/*# sourceMappingURL=index.css.map */

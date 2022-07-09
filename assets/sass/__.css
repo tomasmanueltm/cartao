@@ -1,0 +1,112 @@
+@import url("../icon/icons.css");
+@font-face {
+  font-family: "Rototo";
+  src: url("../font/OpenRoboto.ttf");
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  font-weight: 400;
+  font-family: Rototo;
+  word-break: keep-all;
+  text-decoration: none;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+::scrollbar {
+  width: 0px !important;
+}
+
+*::scrollbar {
+  width: 0px !important;
+}
+
+*::-webkit-scrollbar {
+  width: 0px !important;
+}
+
+*::-moz-scrollbar {
+  width: 0px !important;
+}
+
+*::-ms-scrollbar {
+  width: 0px !important;
+}
+
+*::-moz-osx-scrollbar {
+  width: 0px !important;
+}
+
+*::-o-scrollbar {
+  width: 0px !important;
+}
+
+.subir {
+  animation: keySubir 500ms;
+  animation-fill-mode: forwards;
+}
+
+.descer {
+  animation: keyDescer 800ms;
+  animation-fill-mode: forwards;
+}
+
+.none {
+  display: none;
+}
+
+.modal {
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  justify-content: center;
+}
+.modal .message {
+  width: 35vw;
+  padding: 2rem;
+  text-align: center;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 2px 5px 7px 1px #333;
+}
+.modal .message i {
+  font-size: 3.5rem;
+}
+.modal .message i.sucess {
+  color: #74c933;
+}
+.modal .message i.error {
+  color: #f12929;
+}
+
+@keyframes keySubir {
+  0% {
+    opacity: 0;
+    transform: translateX(10vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+@keyframes keyDescer {
+  0% {
+    opacity: 0;
+    transform: translateX(-100vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+/*# sourceMappingURL=__.css.map */

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão Digital </title>
+    <link rel="stylesheet" href="assets/sass/index.css">
+</head>
+<body>
+    
+
+
+    <div class="painel">
+        <div class="cartao">
+           <div class="img">
+                <img src="assets/src/c.jpg" alt="">
+           </div>
+            <div class="informacoes">
+                <div class="usuario">
+                    <h1 class="nome">Tomas Manuel</h1>
+                    <p class="cargo">UI/UX | Developer</p>
+                </div>
+                <ul class="sobre">
+                    <li>
+                        <p>ID :</p>
+                        <span class="id">  10</span>
+                    </li>
+                    <li>
+                        <p>Área :</p>
+                        <span class="area"> T.I</span>
+                    </li>
+                    <li>
+                        <p>Cidade :</p>
+                        <span class="cidade">Luanda</span>
+                    </li>
+                    <li>
+                        <p>Valido :</p>
+                        <span class="validade">2022-06-23</span>
+                    </li>
+                    <li>
+                        <p>E-mail :</p>
+                        <span class="email">antoniomanuel@gmail.com</span>
+                    </li>
+                    <li>
+                        <p>Telefone :</p>
+                        <span class="telefone"> <strong>+244</strong>929916942</span>
+                    </li>
+                </ul>
+                <div class="social">
+                    <a href="" class="facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="" class="github"><i class="bi bi-github"></i></a>
+                    <a href="" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+            <i class="editar bi bi-eye subir"></i>
+        </div>
+
+        <form action="#" class="form none" enctype="multipart/form-data">
+           <div>
+            <h3>Registro</h3>
+            <i class=""></i>
+           </div>
+           
+            <div class="campos">
+                <label for="">
+                    <span>Nome</span>
+                    <input type="text" placeholder="Seu nome" data-input="nome" id="nome" required>
+                </label>
+                
+                <label for="">
+                    <span>E-mail</span>
+                    <input type="email" placeholder="Seu e-mail" data-input="email" id="email" required>
+                </label>
+            </div>
+
+            <div class="campos gr3">   
+                <label for="">
+                    <span>Área</span>
+                    <input type="text" placeholder="Sua área" data-input="area" id="area" required>
+                </label>
+    
+                <label for="">
+                    <span>Cargo</span>
+                    <input type="text" placeholder="Seu cargo" data-input="cargo" id="cargo" required>
+                </label>
+                
+                <label for="">
+                    <span>Valido</span>
+                    <input type="date"  placeholder="Seu valida" data-input="valida" id="valida" required>
+                </label>
+    
+                <label for="">
+                    <span>Cidade</span>
+                    <input type="text"  placeholder="Seu cidade" data-input="cidade" id="cidade" required>
+                </label>
+
+                <label for="">
+                    <span>Telefone</span>
+                    <input type="tel"   placeholder="Seu telefone" data-input="telefone" id="telefone"  required>
+                </label>
+
+                <label for="">
+                    <span>Foto</span>
+                    <input type="file" data-input="foto" id="foto">
+                </label>
+            </div>
+
+            <button class="cancelar">Cancelar</button>
+            <button type="submit" class="submit">Carregar</button>
+        </form>
+    </div>
+
+
+
+<script src="assets/js/index.js"></script>
+</body>
+</html>
